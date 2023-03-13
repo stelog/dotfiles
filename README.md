@@ -1,2 +1,3 @@
 # dotfiles
-Repo to store configuration files
+
+Collection of my dotfiles.

@@ -1,0 +1,20 @@
+# Show line numbers
+set linenumbers
+
+# Keep track of history
+set historylog
+
+# Enable mouse
+set mouse
+
+# Tabsize should be 4
+set tabsize 4
+
+# Save file in Unix format overwriting a files original format
+set unix
+
+# Toggle buffer
+set multibuffer
+
+# Use auto-indentation
+set autoindent

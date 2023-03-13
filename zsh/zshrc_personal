@@ -1,0 +1,23 @@
+# Personal configurations for .zshrc
+
+# Show separation lines between commands
+setopt promptsubst
+PS1=$'${(r:$COLUMNS::-:)}'$PS1
+
+local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
+# Show date and time
+RPROMPT="[%D{%d.%m.%Y}|%T]"
+
+# Aliases, obviously
+alias youtube-dl='youtube-dl --no-check-certificate'
+alias ll='ls -la'
+alias l='ls -l'
+
+# Functions
+# connect to server and open a new or attach to existing tmux session
+function sst() {
+ssh -t $@ "tmux attach || tmux";
+}
+
+# Path exprt
+export PATH="/home/${USER}/.local/bin:$PATH"

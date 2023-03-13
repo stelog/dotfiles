@@ -1,0 +1,101 @@
+set nocompatible
+
+" Highlighting
+syntax on
+"colorscheme darkblue
+
+set encoding=utf-8
+
+" History
+set history=2000
+set undolevels=1000
+
+" Display
+set ls=2
+set showmode
+set showcmd
+set modeline
+set ruler
+set title
+set nu
+
+" Line wrapping
+set nowrap
+set linebreak
+" set showbreak=
+
+" Auto indent what you can
+set autoindent
+set autoread          " watch for file changes
+
+" Searching
+set ignorecase
+set smartcase
+set gdefault
+set hlsearch
+set showmatch
+
+" Enable jumping into files in a search buffer
+set hidden 
+
+" Make backspace a bit nicer
+set backspace=eol,start,indent
+
+" Indentation
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
+set shiftround
+set expandtab
+
+" Enable mouse
+set mouse=r
+
+" Colours
+set background=dark
+set t_Co=256
+set cursorline
+hi CursorLine cterm=NONE ctermbg=051 ctermfg=black guibg=white guifg=black
+hi CursorColumn cterm=NONE ctermbg=051 ctermfg=black guibg=white guifg=black
+highlight Cursor cterm=NONE ctermbg=white ctermfg=white guifg=white guibg=black
+highlight iCursor cterm=NONE ctermbg=white ctermfg=white guifg=white guibg=black
+nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
+
+" Complete options (disable preview scratch window)
+"set completeopt = menu,menuone,longest
+" Limit popup menu height
+"set pumheight = 15
+
+" SuperTab option for context aware completion
+let g:SuperTabDefaultCompletionType = "context"
+
+" Disable auto popup, use <Tab> to autocomplete
+let g:clang_complete_auto = 0
+" Show clang errors in the quickfix window
+let g:clang_complete_copen = 1
+
+
+function! GitBranch()
+  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+endfunction
+
+function! StatuslineGit()
+  let l:branchname = GitBranch()
+  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
+endfunction
+
+set statusline=
+set statusline+=%#PmenuSel#
+set statusline+=%{StatuslineGit()}
+set statusline+=%#LineNr#
+set statusline+=\ %f
+set statusline+=%m\
+set statusline+=%=
+set statusline+=%#CursorColumn#
+set statusline+=\ %y
+set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+set statusline+=\[%{&fileformat}\]
+set statusline+=\ %p%%
+set statusline+=\ %l:%c
+set statusline+=\
+
