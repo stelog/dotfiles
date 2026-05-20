@@ -9,14 +9,13 @@ local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
 RPROMPT="[%D{%d.%m.%Y}|%T]"
 
 # Aliases, obviously
-alias youtube-dl='youtube-dl --no-check-certificate'
 alias ll='ls -la'
 alias l='ls -l'
 
 # Functions
 # connect to server and open a new or attach to existing tmux session
 function sst() {
-ssh -t $@ "tmux attach || tmux";
+    ssh -t $@ "tmux attach || tmux";
 }
 
 # Path exprt

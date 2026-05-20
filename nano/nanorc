@@ -18,3 +18,7 @@ set multibuffer
 
 # Use auto-indentation
 set autoindent
+
+set constantshow
+
+set tabstospaces
