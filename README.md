@@ -4,14 +4,14 @@ Repository to manage my dotfiles.
 
 ## Structure
 
-| Folder    | Target in `$HOME` (default) |
-|-----------|------------------------------|
-| `bash/`   | `~/`                         |
-| `nano/`   | `~/`                         |
-| `tmux/`   | `~/`                         |
-| `vim/`    | `~/`                         |
-| `zsh/`    | `~/`                         |
-| `config/` | `~/.config/`                 |
+| Folder | Target in `$HOME` (default) |
+| ------ | ---------------------------- |
+| `bash/` | `~/` |
+| `nano/` | `~/` |
+| `tmux/` | `~/` |
+| `vim/` | `~/` |
+| `zsh/` | `~/` |
+| `config/` | `~/.config/` |
 
 The installer also patches existing config files:
 
@@ -36,7 +36,7 @@ replaced:
 ### Options
 
 | Flag | Description |
-|------|-------------|
+| ---- | ----------- |
 | `-n`, `--dry-run`, `--try-run` | Print actions without changing anything |
 | `-f`, `--force` | Overwrite existing files (backs them up first) |
 | `--home DIR`, `--target DIR` | Install into `DIR` instead of `$HOME` |
